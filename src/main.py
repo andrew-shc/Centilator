@@ -1,17 +1,14 @@
 from tkinter import *
+from src.basic_calculator import main as bc
+from src.scientific_calculator import main as sc
 
-master = Tk()
-master.title("Centilator 2019 [Alpha 1.0]")
-master.geometry("500x500")
+root = Tk()
+root.title("Centilator 2019 [Alpha 2.0]")
+root.geometry("500x500")
 
-def bc():
-    import basic_calculator.py
+Label(root, text="Centilator 2019 [Alpha 2.0]").pack()
 
-def sc():
-    import scientific_calculator.py
+Button(root, text="Basic Calculator", command=lambda: bc(root)).pack()
+Button(root, text="Scientific Calculator", command=lambda: sc(root)).pack()
 
-Label(master, text="Centilator 2019 [Indev 1.0]").pack()
-
-Button(master, text="Basic Calculator", command=lambda: bc()).pack()
-
-master.mainloop()
+root.mainloop()
